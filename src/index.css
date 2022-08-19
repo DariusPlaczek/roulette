@@ -1,0 +1,542 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.bhdLno {
+  max-width: 450px !important;
+  max-height: 450px !important;
+  width: 450px !important;
+  height: 450px !important;
+}
+
+.spin-button-gardient {
+  background: rgb(134,15,28);
+  background: -moz-radial-gradient(circle, rgba(134,15,28,1) 0%, rgba(198,2,23,1) 25%, rgba(198,2,23,1) 50%, rgba(198,2,23,1) 75%, rgba(134,15,28,1) 100%);
+  background: -webkit-radial-gradient(circle, rgba(134,15,28,1) 0%, rgba(198,2,23,1) 25%, rgba(198,2,23,1) 50%, rgba(198,2,23,1) 75%, rgba(134,15,28,1) 100%);
+  background: radial-gradient(circle, rgba(134,15,28,1) 0%, rgba(198,2,23,1) 25%, rgba(198,2,23,1) 50%, rgba(198,2,23,1) 75%, rgba(134,15,28,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#860f1c",endColorstr="#860f1c",GradientType=1);
+}
+
+.board-container {
+  display: grid;
+  grid-template-columns: 3fr 350px 350px;
+  grid-template-rows: 150px;
+}
+
+.table-container {
+  @apply bg-stone-700 flex justify-center items-center shadow-2xl border-2 border-stone-400
+}
+
+.jetons-cotainer {
+  @apply bg-stone-700 flex justify-items-start shadow-2xl border-2 border-stone-400
+
+}
+
+.min-h {
+  min-height: 98px;
+  height: auto;
+}
+
+
+.game-field-big {
+  @apply w-full h-full border relative bg-green-700 flex justify-center items-center
+}
+
+.bg-dotted {
+  background-image: url("../public/assets/img/gambling-g5abaf2281_1920.jpg");
+  background-color: #282523;
+  /*background-image: radial-gradient(#1f1d1c 20%, transparent 20%),*/
+  /*radial-gradient(#2c2626 5%, transparent 5%);*/
+  /*background-color: #282523;*/
+  /*background-position: 0 0, 100px 100px;*/
+  /*background-size: 10px 10px;*/
+}
+
+.bg-opacity {
+  background-color: #282523;
+  opacity: 75%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  /*filter: sepia(30);*/
+}
+
+.removeButton {
+  @apply w-4 h-4 absolute right-1 top-1 bg-red-800 text-white text-xs z-[100] rounded-full
+}
+
+#handcoins div:nth-last-child(1) {
+  opacity: 100%;
+}
+
+/***** GRID ***********/
+
+.angry-grid {
+  display: grid;
+  grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px;
+  height: 100%;
+}
+
+#item-0 {
+
+  background-color: #898B9F;
+  grid-row: 1 / 14;
+  grid-column: 3 / 6;
+
+}
+#item-1 {
+
+  background-color: #D75F89;
+  grid-row: 2 / 6;
+  grid-column: 1 / 3;
+
+}
+#item-2 {
+
+  background-color: #5DBA5D;
+  grid-row: 6 / 10;
+  grid-column: 1 / 3;
+
+}
+#item-3 {
+
+  background-color: #A7997D;
+  grid-row: 10 / 14;
+  grid-column: 1 / 3;
+
+}
+#item-4 {
+
+  background-color: #CB7DD5;
+  grid-row: 2 / 6;
+  grid-column: 6 / 8;
+
+}
+#item-5 {
+
+  background-color: #F97D75;
+  grid-row: 6 / 10;
+  grid-column: 6 / 8;
+
+}
+#item-6 {
+
+  background-color: #A58BDD;
+  grid-row: 10 / 14;
+  grid-column: 6 / 8;
+
+}
+#item-7 {
+
+  background-color: #A9A579;
+  grid-row: 14 / 15;
+  grid-column: 1 / 3;
+
+}
+#item-8 {
+
+  background-color: #C5DC66;
+  grid-row: 14 / 15;
+  grid-column: 6 / 8;
+
+}
+
+.num-angry-grid {
+  display: inline-grid;
+
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  gap: 0px;
+  height: 100%;
+  width: 100%;
+
+}
+
+#num-0 {
+
+  background-color: #DA5D57;
+  grid-row-start: 1;
+  grid-column-start: 1;
+
+  grid-row-end: 2;
+  grid-column-end: 4;
+
+}
+#num-1 {
+
+  background-color: #7F75A7;
+  grid-row-start: 2;
+  grid-column-start: 1;
+
+  grid-row-end: 3;
+  grid-column-end: 2;
+
+}
+#num-2 {
+
+  background-color: #895EB9;
+  grid-row-start: 2;
+  grid-column-start: 2;
+
+  grid-row-end: 3;
+  grid-column-end: 3;
+
+}
+#num-3 {
+
+  background-color: #9DC587;
+  grid-row-start: 2;
+  grid-column-start: 3;
+
+  grid-row-end: 3;
+  grid-column-end: 4;
+
+}
+#num-4 {
+
+  background-color: #ED5F55;
+  grid-row-start: 3;
+  grid-column-start: 1;
+
+  grid-row-end: 4;
+  grid-column-end: 2;
+
+}
+#num-5 {
+
+  background-color: #B7F985;
+  grid-row-start: 3;
+  grid-column-start: 2;
+
+  grid-row-end: 4;
+  grid-column-end: 3;
+
+}
+#num-6 {
+
+  background-color: #7855D6;
+  grid-row-start: 3;
+  grid-column-start: 3;
+
+  grid-row-end: 4;
+  grid-column-end: 4;
+
+}
+#num-7 {
+
+  background-color: #D9C579;
+  grid-row-start: 4;
+  grid-column-start: 1;
+
+  grid-row-end: 5;
+  grid-column-end: 2;
+
+}
+#num-8 {
+
+  background-color: #7B6766;
+  grid-row-start: 4;
+  grid-column-start: 2;
+
+  grid-row-end: 5;
+  grid-column-end: 3;
+
+}
+#num-9 {
+
+  background-color: #BEE7C5;
+  grid-row-start: 4;
+  grid-column-start: 3;
+
+  grid-row-end: 5;
+  grid-column-end: 4;
+
+}
+#num-10 {
+
+  background-color: #5DBF6E;
+  grid-row-start: 5;
+  grid-column-start: 1;
+
+  grid-row-end: 6;
+  grid-column-end: 2;
+
+}
+#num-11 {
+
+  background-color: #76B678;
+  grid-row-start: 5;
+  grid-column-start: 2;
+
+  grid-row-end: 6;
+  grid-column-end: 3;
+
+}
+#num-12 {
+
+  background-color: #B8AC98;
+  grid-row-start: 5;
+  grid-column-start: 3;
+
+  grid-row-end: 6;
+  grid-column-end: 4;
+
+}
+#num-13 {
+
+  background-color: #BBA66D;
+  grid-row-start: 6;
+  grid-column-start: 1;
+
+  grid-row-end: 7;
+  grid-column-end: 2;
+
+}
+#num-14 {
+
+  background-color: #BF85ED;
+  grid-row-start: 6;
+  grid-column-start: 2;
+
+  grid-row-end: 7;
+  grid-column-end: 3;
+
+}
+#num-15 {
+
+  background-color: #6996B5;
+  grid-row-start: 6;
+  grid-column-start: 3;
+
+  grid-row-end: 7;
+  grid-column-end: 4;
+
+}
+#num-16 {
+
+  background-color: #857BEB;
+  grid-row-start: 7;
+  grid-column-start: 1;
+
+  grid-row-end: 8;
+  grid-column-end: 2;
+
+}
+#num-17 {
+
+  background-color: #D865F7;
+  grid-row-start: 7;
+  grid-column-start: 2;
+
+  grid-row-end: 8;
+  grid-column-end: 3;
+
+}
+#num-18 {
+
+  background-color: #9DB887;
+  grid-row-start: 7;
+  grid-column-start: 3;
+
+  grid-row-end: 8;
+  grid-column-end: 4;
+
+}
+#num-19 {
+
+  background-color: #55A776;
+  grid-row-start: 8;
+  grid-column-start: 1;
+
+  grid-row-end: 9;
+  grid-column-end: 2;
+
+}
+#num-20 {
+
+  background-color: #F77DBC;
+  grid-row-start: 8;
+  grid-column-start: 2;
+
+  grid-row-end: 9;
+  grid-column-end: 3;
+
+}
+#num-21 {
+
+  background-color: #AC586E;
+  grid-row-start: 8;
+  grid-column-start: 3;
+
+  grid-row-end: 9;
+  grid-column-end: 4;
+
+}
+#num-22 {
+
+  background-color: #9E55A9;
+  grid-row-start: 9;
+  grid-column-start: 1;
+
+  grid-row-end: 10;
+  grid-column-end: 2;
+
+}
+#num-23 {
+
+  background-color: #7DD59D;
+  grid-row-start: 9;
+  grid-column-start: 2;
+
+  grid-row-end: 10;
+  grid-column-end: 3;
+
+}
+#num-24 {
+
+  background-color: #5DAF9F;
+  grid-row-start: 9;
+  grid-column-start: 3;
+
+  grid-row-end: 10;
+  grid-column-end: 4;
+
+}
+#num-25 {
+
+  background-color: #66BDC7;
+  grid-row-start: 10;
+  grid-column-start: 1;
+
+  grid-row-end: 11;
+  grid-column-end: 2;
+
+}
+#num-26 {
+
+  background-color: #CD9655;
+  grid-row-start: 10;
+  grid-column-start: 2;
+
+  grid-row-end: 11;
+  grid-column-end: 3;
+
+}
+#num-27 {
+
+  background-color: #D7BFA9;
+  grid-row-start: 10;
+  grid-column-start: 3;
+
+  grid-row-end: 11;
+  grid-column-end: 4;
+
+}
+#num-28 {
+
+  background-color: #9DC89E;
+  grid-row-start: 11;
+  grid-column-start: 1;
+
+  grid-row-end: 12;
+  grid-column-end: 2;
+
+}
+#num-29 {
+
+  background-color: #C989DF;
+  grid-row-start: 11;
+  grid-column-start: 2;
+
+  grid-row-end: 12;
+  grid-column-end: 3;
+
+}
+#num-30 {
+
+  background-color: #6BB9A5;
+  grid-row-start: 11;
+  grid-column-start: 3;
+
+  grid-row-end: 12;
+  grid-column-end: 4;
+
+}
+#num-31 {
+
+  background-color: #98B5F6;
+  grid-row-start: 12;
+  grid-column-start: 1;
+
+  grid-row-end: 13;
+  grid-column-end: 2;
+
+}
+#num-32 {
+
+  background-color: #B756B5;
+  grid-row-start: 12;
+  grid-column-start: 2;
+
+  grid-row-end: 13;
+  grid-column-end: 3;
+
+}
+#num-33 {
+
+  background-color: #F8B677;
+  grid-row-start: 12;
+  grid-column-start: 3;
+
+  grid-row-end: 13;
+  grid-column-end: 4;
+
+}
+#num-34 {
+
+  background-color: #DBDB78;
+  grid-row-start: 13;
+  grid-column-start: 1;
+
+  grid-row-end: 14;
+  grid-column-end: 2;
+
+}
+#num-35 {
+
+  background-color: #6CB7DF;
+  grid-row-start: 13;
+  grid-column-start: 2;
+
+  grid-row-end: 14;
+  grid-column-end: 3;
+
+}
+#num-36 {
+
+  background-color: #AF6CCB;
+  grid-row-start: 13;
+  grid-column-start: 3;
+
+  grid-row-end: 14;
+  grid-column-end: 4;
+
+}
